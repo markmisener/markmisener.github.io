@@ -167,6 +167,17 @@ map.on('load', function() {
       .addTo(map);
     });
 
-    // Start the playback animation for each borough
-    playback(0);
-});
+    var start = true;
+    $(window).scroll(function() {
+      var hT = $('#map').offset().top,
+          hH = $('#map').outerHeight(),
+          wH = $(window).height(),
+          wS = $(this).scrollTop();
+      if (wS > (hT+hH-wH) && start == true){
+        // only start playback if it is the first scroll
+        start = false;
+        // Start the playback animation for each location
+        playback(0);
+      }
+    });
+  });
