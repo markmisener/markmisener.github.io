@@ -1,7 +1,8 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoibWFya21pc2VuZXIiLCJhIjoiY2oyMHU1NXU1MDU1bzMycDgzcTd5YXNodCJ9.vs5478GgiPcqcJAOxAOFwA';
+mapboxgl.accessToken = 'pk.eyJ1IjoibW1pc2VuZXIiLCJhIjoiY2o0ZTg4M2pzMDBqbDJ4cnZmNGxyZ2piZiJ9.ZIHGRjLYZxfmBQmWbXpgEg';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
+    // style: 'mapbox://styles/mapbox/streets-v9',
+    style: 'mapbox://styles/mmisener/cjjcaus0546um2sp8ueif4adq',
     center: [-122.399, 37.788],
     maxZoom: 18,
     minZoom: 9,
