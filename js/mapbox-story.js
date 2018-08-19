@@ -1,7 +1,6 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoibW1pc2VuZXIiLCJhIjoiY2o0ZTg4M2pzMDBqbDJ4cnZmNGxyZ2piZiJ9.ZIHGRjLYZxfmBQmWbXpgEg';
+mapboxgl.accessToken = 'pk.eyJ1IjoibW1pc2VuZXIiLCJhIjoiY2psMTVzdjRoMWNjbzNscXB5MnY4Zzd3cSJ9.-ttqU8sEkDD-xIcD6kHirw';
 var map = new mapboxgl.Map({
     container: 'map',
-    // style: 'mapbox://styles/mapbox/streets-v9',
     style: 'mapbox://styles/mmisener/cjjcaus0546um2sp8ueif4adq',
     center: [-122.399, 37.788],
     maxZoom: 18,
@@ -98,7 +97,8 @@ var locations = [
         center: [2.175164222717285,41.40466603499513],
         bearing: 90,
         zoom: 16,
-        pitch: 50
+        pitch: 50,
+        speed: 3
       }
   },
 
@@ -111,7 +111,8 @@ var locations = [
       center: [-122.18574911355971,37.78220957403709],
       bearing: 28.4,
       zoom: 16,
-      pitch: 50
+      pitch: 50,
+      speed: 3
     }
 }];
 
@@ -119,6 +120,16 @@ function playback(index) {
     title.textContent = locations[index].title;
     description.textContent = locations[index].description;
     image.src = locations[index].imageUrl;
+
+    // flyToOptions = {
+    //   "curve": 1.42,
+    //   "minZoom": 8,
+    //   "speed": 1.2,
+    //   "screenSpeed": 1.2 //,
+    //   // "maxDuration": 1
+    // };
+    //
+    // console.log(flyToOptions);
 
     // Animate the map position based on camera properties
     map.flyTo(locations[index].camera);

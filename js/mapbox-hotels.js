@@ -10,6 +10,14 @@ var map = new mapboxgl.Map({
 
 var locations = [
   {
+    "title": "Waterfront Hotel",
+    "geometry": {
+        "type": "Point",
+        "center":  [-122.278600,37.794910]
+      }
+  },
+
+  {
     "title": "Oakland Marriott City Center",
     "geometry": {
         "type": "Point",
@@ -26,10 +34,26 @@ var locations = [
   },
 
   {
-    "title": "Claremont Club & Spa",
+    "title": "Hampton Inn & Suites Oakland Airport - Alameda",
     "geometry": {
         "type": "Point",
-        "center":  [-122.2420,37.8590]
+        "center":  [-122.242280,37.724510]
+      }
+  },
+
+  {
+    "title": "The Marina Inn on San Francisco Bay",
+    "geometry": {
+        "type": "Point",
+        "center":  [-122.189460,37.700530]
+      }
+  },
+
+  {
+    "title": "Mills College",
+    "geometry": {
+        "type": "Point",
+        "center":  [-122.169170,37.767140]
       }
   }
 ];
@@ -62,7 +86,7 @@ map.on('load', function() {
       // create a HTML element for each feature
       var el = document.createElement('div');
       el.className = 'marker';
-
+      // TODO: change all markers (except Mills) to a different icon
       // make a marker for each feature and add to the map
       new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.center)
