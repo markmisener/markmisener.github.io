@@ -21,7 +21,7 @@ var locations = [
     "camera": {
         center: [-121.97741121053696,37.80969918975662],
         bearing: 28.4,
-        zoom: 12,
+        zoom: 11,
         pitch: 50
       }
   },
@@ -33,7 +33,7 @@ var locations = [
     "imageUrl": "images/map-2.jpg",
     "camera": {
         center: [-121.8110203742981,38.72080923046447],
-        zoom: 10,
+        zoom: 11,
         pitch: 50
       }
   },
@@ -44,8 +44,8 @@ var locations = [
     "description": "Where we met",
     "imageUrl": "images/map-3.jpg",
     "camera": {
-      center: [-122.6748,38.3386],
-        zoom: 15,
+      center: [-122.67390310764311,38.340974582660486],
+        zoom: 12,
         pitch: 50
       }
   },
@@ -110,38 +110,27 @@ var locations = [
     "camera": {
       center: [-122.18574911355971,37.78220957403709],
       bearing: 28.4,
-      zoom: 16,
+      zoom: 14,
       pitch: 50,
       speed: 3
     }
 }];
+
+function increment(index, locations) {
+  if (index + 1 > locations.length - 1) {
+      index = 0;
+  } else {
+      index += 1;
+  }
+  return index;
+}
 
 function playback(index) {
     title.textContent = locations[index].title;
     description.textContent = locations[index].description;
     image.src = locations[index].imageUrl;
 
-    // flyToOptions = {
-    //   "curve": 1.42,
-    //   "minZoom": 8,
-    //   "speed": 1.2,
-    //   "screenSpeed": 1.2 //,
-    //   // "maxDuration": 1
-    // };
-    //
-    // console.log(flyToOptions);
-
-    // Animate the map position based on camera properties
-    map.flyTo(locations[index].camera);
-
-    map.once('moveend', function() {
-        // Duration the slide is on screen after interaction
-        window.setTimeout(function() {
-            // Increment index
-            index = (index + 1 === locations.length) ? 0 : index + 1;
-            playback(index);
-        }, 3000); // After callback, show the location for 3 seconds.
-    });
+    map.jumpTo(locations[index].camera);
 }
 
 map.on('load', function() {
@@ -179,6 +168,12 @@ map.on('load', function() {
       .addTo(map);
     });
 
+    var index = 0;
+    document.getElementById('nextbutton').addEventListener('click', function () {
+        index = increment(index, locations);
+        playback(index);
+    });
+
     var start = true;
     $(window).scroll(function() {
       var hT = $('#map').offset().top,
@@ -189,7 +184,8 @@ map.on('load', function() {
         // only start playback if it is the first scroll
         start = false;
         // Start the playback animation for each location
-        playback(0);
+        playback(index);
       }
     });
+
   });
