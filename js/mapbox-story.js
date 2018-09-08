@@ -130,7 +130,7 @@ function playback(index) {
     description.textContent = locations[index].description;
     image.src = locations[index].imageUrl;
 
-    map.jumpTo(locations[index].camera);
+    map.easeTo(locations[index].camera);
 }
 
 map.on('load', function() {
