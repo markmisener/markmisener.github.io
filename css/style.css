@@ -301,11 +301,18 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-cover {
-  height: 900px;
+  height: 100%;
+  background-attachment: cover;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   position: relative;
+  webkit-background-size: cover;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 .fh5co-cover .overlay {
   z-index: 0;
@@ -320,11 +327,11 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   z-index: 10;
 }
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .fh5co-cover {
     height: 600px;
   }
-}
+} */
 .fh5co-cover .display-t,
 .fh5co-cover .display-tc {
   height: 900px;
