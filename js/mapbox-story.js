@@ -125,12 +125,21 @@ function increment(index, locations) {
   return index;
 }
 
-function playback(index) {
-    title.textContent = locations[index].title;
-    description.textContent = locations[index].description;
-    image.src = locations[index].imageUrl;
+function decrement(index, locations) {
+  if (index - 1 < 0) {
+      index = locations.length - 1;
+  } else {
+      index -= 1;
+  }
+  return index;
+}
 
-    map.easeTo(locations[index].camera);
+function playback(index) {
+  title.textContent = locations[index].title;
+  description.textContent = locations[index].description;
+  image.src = locations[index].imageUrl;
+
+  map.easeTo(locations[index].camera);
 }
 
 map.on('load', function() {
@@ -171,6 +180,10 @@ map.on('load', function() {
     var index = 0;
     document.getElementById('nextbutton').addEventListener('click', function () {
         index = increment(index, locations);
+        playback(index);
+    });
+    document.getElementById('backbutton').addEventListener('click', function () {
+        index = decrement(index, locations);
         playback(index);
     });
 
