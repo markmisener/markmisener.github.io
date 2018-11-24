@@ -189,7 +189,7 @@ map.on('load', function() {
 
     var start = true;
     $(window).scroll(function() {
-      var hT = $('#map').offset().top,
+      var hT = $('#map').offset().top - 200,
           hH = $('#map').outerHeight(),
           wH = $(window).height(),
           wS = $(this).scrollTop();
