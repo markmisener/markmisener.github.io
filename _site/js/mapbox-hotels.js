@@ -1,95 +1,95 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibWFya21pc2VuZXIiLCJhIjoiY2oyMHU1NXU1MDU1bzMycDgzcTd5YXNodCJ9.vs5478GgiPcqcJAOxAOFwA';
+
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    center: [-122.2729,37.8021],
+    style: 'mapbox://styles/mmisener/cjqg4nfhajk4e2qmtdpdhcic9',
+    center: [-122.235584, 37.811882],
     maxZoom: 18,
     minZoom: 9,
-    zoom: 10
+    zoom: 11
 });
 
-var locations = [
-  {
-    "title": "Waterfront Hotel",
-    "geometry": {
-        "type": "Point",
-        "center":  [-122.278600,37.794910]
-      }
-  },
+map.on('load', function () {
+    // Add a layer showing the places.
+    map.addLayer({
+        "id": "places",
+        "type": "symbol",
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": [
+                  {
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<strong>Hyatt Place Emeryville</strong>",
+                        "icon": "home"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-122.292417, 37.837049]
+                    }
+                  },
 
-  {
-    "title": "Oakland Marriott City Center",
-    "geometry": {
-        "type": "Point",
-        "center": [-122.2729,37.8021],
-      }
-  },
+                  {
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<strong>Waterfront Hotel</strong>",
+                        "icon": "home"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-122.278600, 37.794910]
+                    }
+                  },
 
-  {
-    "title": "Courtyard by Marriott Oakland Emeryville",
-    "geometry": {
-        "type": "Point",
-        "center":  [-122.2937,37.8348],
-      }
-  },
+                  {
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<strong>Mills College</strong>",
+                        "icon": "heart"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-122.169170, 37.767140]
+                    }
+                  }
+                ]
+              }
+            },
+        "layout": {
+            "icon-image": "{icon}-15",
+            "icon-allow-overlap": true,
+            "icon-size": 2
+        }
+    });
 
-  {
-    "title": "Hampton Inn & Suites Oakland Airport - Alameda",
-    "geometry": {
-        "type": "Point",
-        "center":  [-122.242280,37.724510]
-      }
-  },
+    // When a click event occurs on a feature in the places layer, open a popup at the
+    // location of the feature, with description HTML from its properties.
+    map.on('click', 'places', function (e) {
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var description = e.features[0].properties.description;
 
-  {
-    "title": "The Marina Inn on San Francisco Bay",
-    "geometry": {
-        "type": "Point",
-        "center":  [-122.189460,37.700530]
-      }
-  },
+        // Ensure that if the map is zoomed out such that multiple
+        // copies of the feature are visible, the popup appears
+        // over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
 
-  {
-    "title": "Mills College",
-    "geometry": {
-        "type": "Point",
-        "center":  [-122.169170,37.767140]
-      }
-  }
-];
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+    });
 
-map.on('load', function() {
+    // Change the cursor to a pointer when the mouse is over the places layer.
+    map.on('mouseenter', 'places', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
 
-  map.addLayer({
-      'id': '3d-buildings',
-      'source': 'composite',
-      'source-layer': 'building',
-      'filter': ['==', 'extrude', 'true'],
-      'type': 'fill-extrusion',
-      'minzoom': 15,
-      'paint': {
-          'fill-extrusion-color': '#aaa',
-          'fill-extrusion-height': {
-              'type': 'identity',
-              'property': 'height'
-          },
-          'fill-extrusion-base': {
-              'type': 'identity',
-              'property': 'min_height'
-          },
-          'fill-extrusion-opacity': .6
-      }
-    })
-
-  // add markers to map
-  locations.forEach(function(marker) {
-      // create a HTML element for each feature
-      var el = document.createElement('div');
-      el.className = 'marker';
-      // TODO: change all markers (except Mills) to a different icon
-      // make a marker for each feature and add to the map
-      new mapboxgl.Marker(el)
-        .setLngLat(marker.geometry.center)
-        .addTo(map);
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'places', function () {
+        map.getCanvas().style.cursor = '';
     });
 });
