@@ -94,7 +94,6 @@
 	        <div class="col-xs-10 text-right menu-1">
 	          <ul>
 	            <li><a href="/">Home</a></li>
-	            <!-- <li><a href="story">Our Story</a></li> -->
 	            <li class="active"><a href="details">Details</a></li>
 	            <li><a href="registry">Registry</a></li>
 	          </ul>
@@ -118,37 +117,59 @@
 		</div>
 	</header>
 
-	<!-- <div id="fh5co-couple" class="fh5co-section-gray">
-	</div> -->
-
-	<!-- <div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_5.jpg);"> -->
-	<div id="fh5co-event" class="fh5co-bg">
-	  <div class="overlay"></div>
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-	        <h2>Wedding Events</h2>
-	      </div>
-	    </div>
-	    <div class="row">
-	      <div class="col-md-6 col-md-offset-3 col-md-6 text-center">
-	        <div class="event-wrap animate-box">
-	          <h3>Ceremony &amp; Reception</h3>
-	          <div class="event-col">
-	            <i class="icon-clock"></i>
-	            <span>4:00 PM</span>
-	          </div>
-	          <div class="event-col">
-	            <i class="icon-calendar"></i>
-	            <span>Saturday June 29, 2019</span>
-	          </div>
-	          <span style="font-weight:bold;">Mills College</span>
-	          <span>5000 MacArthur Blvd, Oakland, CA 94613</span>
-	          <span>Dinner &amp; reception to follow</span>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
+	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/mills.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<h2>Event Details</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="display-t">
+					<div class="display-tc">
+						<div class="col-md-10 col-md-offset-1">
+							<div class="col-md-6 col-sm-6 text-center">
+								<div class="event-wrap animate-box">
+									<h3>Ceremony</h3>
+									<div class="event-col">
+										<i class="icon-clock"></i>
+										<span>4:00 PM</span>
+									</div>
+									<div class="event-col">
+										<i class="icon-calendar"></i>
+										<span>Saturday June 29, 2019</span>
+									</div>
+									<span style="font-weight:bold;">Mills College Chapel</span>
+				          <span>5000 MacArthur Blvd, Oakland, CA 94613</span>
+									<br>
+									<p>Some street parking is available as well as a parking lot to the far right of the security gate.</p>
+									<span><a href="images/mills_college_campus_map.pdf" target="_blank">Map</a></span>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6 text-center">
+								<div class="event-wrap animate-box">
+									<h3>Reception</h3>
+									<div class="event-col">
+										<i class="icon-clock"></i>
+										<span>5:00 PM</span>
+									</div>
+									<div class="event-col">
+										<i class="icon-calendar"></i>
+										<span>Saturday June 29, 2019</span>
+									</div>
+									<span style="font-weight:bold;">Mills College Student Union</span>
+				          <span>5000 MacArthur Blvd, Oakland, CA 94613</span>
+									<br>
+									<p>The reception will be held a short walk from the chapel. Additional parking is available between building 32 and 40.</p>
+									<span><a href="images/mills_college_campus_map.pdf" target="_blank">Map</a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<div id="fh5co-services" class="fh5co-section-gray">
@@ -181,16 +202,6 @@
 							<p>10 Washington Street Oakland, CA 94607<br>(510) 575-0226<br><a href="https://www.jdvhotels.com/hotels/california/oakland/waterfront-hotel">website</a></p>
 						</div>
 					</div>
-
-					<!-- <div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-						<span class="icon">
-							<i class="icon-home"></i>
-						</span>
-						<div class="feature-copy">
-							<h3>Oakland Marriott City Center</h3>
-							<p>1001 Broadway, Oakland, CA 94607<br>(510) 451-4000<br><a href="https://www.marriott.com">website</a></p>
-						</div>
-					</div> -->
 
 					<p>We also encourage taking a look at <a href="https://www.airbnb.com/">AirBnB</a> for rentals.</p>
 				</div>
@@ -234,7 +245,6 @@
 	  $(function(){
 	    var includes = $('[data-include]');
 	    jQuery.each(includes, function(){
-	      // var file = 'views/' + $(this).data('include') + '.html';
 				var file = 'views/' + $(this).data('include');
 	      $(this).load(file);
 	    });
