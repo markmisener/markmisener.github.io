@@ -1,3 +1,100 @@
-collections:
-  authors:
-    output: false
+# Site settings
+title: markmisener
+email: markmisener@gmail.com
+author: Mark Misener
+description: "Mark Misener's personal website."
+baseurl: ""
+url: "http://www.markmisener.info"
+date_format: "%Y/%m/%d"
+
+# Google services
+google_analytics:
+
+# Optional features
+animated: false
+show_related_posts: true
+show_post_footers: false
+show_social_icons: true
+
+# Disqus post comments
+# (leave blank to disable Disqus)
+disqus_shortname:
+
+# Facebook Comments plugin
+# (leave blank to disable Facebook Comments, otherwise set it to true)
+facebook_comments:
+facebook_appid:
+facebook_comments_number:
+
+# Social icons
+github_username: markmisener
+bitbucket_username:
+stackoverflow_id:
+twitter_username:
+skype_username:
+steam_username:
+google_plus_id:
+linkedin_username: markmisener
+angellist_username:
+medium_id:
+bitcoin_url:
+paypal_url:
+flattr_button:
+yandex_money_url:
+include_feed: true
+
+# Post sharing icons
+show_sharing_icons: false
+share_text: 'share:'
+# Change to 'true' to enable individual icons
+share_facebook: false
+share_twitter: false
+share_googleplus: false
+share_linkedin: false
+share_digg: false
+share_tumblr: false
+share_reddit: false
+share_stumbleupon: false
+share_hackernews: false
+
+text:
+  pagination:
+    newer: 'Newer'
+    older: 'Older'
+  share_buttons:
+    text: 'share'
+    facebook: 'Share on Facebook'
+    twitter: 'Share on Twitter'
+    googleplus: 'Share on Google+'
+    linkedin: 'Share on LinkedIn'
+    digg: 'Share on Digg'
+    tumblr: 'Share on Tumblr'
+    reddit: 'Share on Reddit'
+    stumbleupon: 'Share on StumbleUpon'
+    hackernews: 'Share on Hacker News'
+  post:
+    updated: 'Updated'
+    related_posts: 'Related'
+  index:
+    coming_soon: 'Coming soon'
+  navigation:
+    blog: 'Blog'
+  footer:
+    available_on: 'Available on'
+    theme: 'Theme'
+
+# Build settings
+markdown: kramdown
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+permalink: pretty
+paginate: 5
+paginate_path: "/blog/page:num/"
+sass:
+  compressed: true
+plugins:
+  - jemoji
+  - jekyll-sitemap
+  - jekyll-paginate
+# https://github.com/jekyll/jekyll/issues/2938
+exclude: [vendor]
