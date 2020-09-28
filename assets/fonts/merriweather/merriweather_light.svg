@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
-<svg xmlns="http://www.w3.org/2000/svg">
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "https://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="https://www.w3.org/2000/svg">
 <metadata></metadata>
 <defs>
 <font id="merriweather_lightregular" horiz-adv-x="1405" >
@@ -235,4 +235,4 @@
 <glyph unicode="&#x2122;" horiz-adv-x="2244" d="M144 1330l20 225h706v-224l-66 -4l-22 140l-194 9v-607l144 -13v-78h-429v78l139 13v605l-191 -7l-38 -136zM971 778v78l114 13l40 594l-116 7v85h321l157 -427l62 -191l213 618h302v-85l-116 -7l53 -594l107 -13v-78h-345v78l96 12l-25 387l-11 227l-34 -105l-216 -607 h-91l-207 546l-66 171l-5 -177l-27 -441l101 -13v-78h-307z" />
 <glyph unicode="&#x25fc;" horiz-adv-x="1135" d="M0 0v1135h1135v-1135h-1135z" />
 </font>
-</defs></svg> 
+</defs></svg>
