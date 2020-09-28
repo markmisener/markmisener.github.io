@@ -4,7 +4,7 @@ email: markmisener@gmail.com
 author: Mark Misener
 description: "Mark Misener's personal website."
 baseurl: ""
-url: "http://www.markmisener.info"
+url: "https://www.markmisener.info"
 date_format: "%Y/%m/%d"
 
 # Google services
