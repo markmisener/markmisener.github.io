@@ -5,7 +5,7 @@ author: Mark Misener
 description: "Mark Misener's personal website."
 baseurl: ""
 url: "https://www.markmisener.info"
-date_format: "%Y/%m/%d"
+date_format: "%B %d, %Y"
 
 # Google services
 google_analytics:
