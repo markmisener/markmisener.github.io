@@ -1,5 +1,3 @@
-## mgrachev.github.io
+## http://www.markmisener.info
 
-Blog and homepage. Based on the theme [Pixyll](https://github.com/johnotander/pixyll).
-
-URL: [mgrachev.com](http://www.mgrachev.com)
+[Personal blog site](http://www.markmisener.info, based on the theme [Pixyll](https://github.com/johnotander/pixyll).
