@@ -8,13 +8,14 @@ url: "https://www.markmisener.info"
 date_format: "%B %d, %Y"
 
 # Google services
-google_analytics:
+google_analytics: UA-179471270-1
 
 # Optional features
 animated: false
 show_related_posts: true
 show_post_footers: false
 show_social_icons: true
+show_feed: true
 
 # Disqus post comments
 # (leave blank to disable Disqus)
@@ -41,7 +42,6 @@ bitcoin_url:
 paypal_url:
 flattr_button:
 yandex_money_url:
-include_feed: true
 
 # Post sharing icons
 show_sharing_icons: false
