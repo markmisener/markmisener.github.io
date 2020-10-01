@@ -34,7 +34,7 @@
     {% if site.medium_id %}
       <a class="fa fa-medium" href="https://medium.com/{{ site.medium_id }}" target="_blank"></a>
     {% endif %}
-    {% if site.include_feed %}
+    {% if site.show_feed %}
       <a class="fas" href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fas fa-rss"></i></a>
     {% endif %}
   </div>
