@@ -7,38 +7,38 @@ tags: osm openstreetmap osmconvert osmfilter kepler
 summary: "With nearly 6.9 million registered users contributing 7B+ data points, OpenStreetMap provides a wealth of free global geospatial data, if you know how to use it."
 ---
 
-OpenStreetMap is a community-driven initiative to create and provide free geographic data, such as street maps, to anyone. At the time of this post, 6.9 million registered users have [contributed](https://www.openstreetmap.org/stats/data_stats.html) 6.4B [nodes](https://wiki.openstreetmap.org/wiki/Node), 700M [ways](https://wiki.openstreetmap.org/wiki/Way), and 8.2M [relations](https://wiki.openstreetmap.org/wiki/Relation). The project provides a wealth of free global geospatial data, if you know how to use it.
+OpenStreetMap is a community-driven initiative to create and provide free geographic data, such as street maps, to anyone. At the time of this post, 6.9 million registered users have [contributed](https://www.openstreetmap.org/stats/data_stats.html){:target="_blank"} 6.4B [nodes](https://wiki.openstreetmap.org/wiki/Node){:target="_blank"}, 700M [ways](https://wiki.openstreetmap.org/wiki/Way){:target="_blank"}, and 8.2M [relations](https://wiki.openstreetmap.org/wiki/Relation){:target="_blank"}. The project provides a wealth of free global geospatial data, if you know how to use it.
 
 ## Getting set up
 
 There are many tools you can use to interact with OSM data. The goal here is not to cover all of them, but rather to focus on a few that I have worked with recently.
 
-I use a mac and this post assumes you are using one, too.
+I use a Mac and this post assumes you are using one, too.
 
 ### Install
 
 You can run the following commands in the terminal to install a few utilities you will need to follow along with this walkthrough.
 
-[homebrew](https://brew.sh/)
+[homebrew](https://brew.sh/){:target="_blank"}
 ~~~ sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ~~~
 
-[osmium-tool](https://osmcode.org/osmium-tool/)
+[osmium-tool](https://osmcode.org/osmium-tool/){:target="_blank"}
 ~~~ sh
 brew install osmium-tool
 ~~~
 
-[GDAL](https://gdal.org/)
+[GDAL](https://gdal.org/){:target="_blank"}
 
-This command takes a little while to complete. You might want to run the command then take a walk or grab something to eat or drink while you wait.
+This command takes a little while to complete, so you might want to run the command then take a walk or grab something to eat or drink while you wait for it to run.
 ~~~ sh
 brew install gdal
 ~~~
 
 ### Project directory
 
-To keep things easy, let's work out of a new project directory. Run the following commands in your terminal.
+To keep things organized on your machine, let's work out of a new project directory. Run the following commands in your terminal.
 
 ~~~ sh
 mkdir osm-at-the-cmd-line
@@ -47,9 +47,9 @@ cd osm-at-the-cmd-line
 
 ### Download
 
-You can download OSM data in [a variety of ways](https://wiki.openstreetmap.org/wiki/Downloading_data), but I have found it easiest to download from [Geofabrik's free download server](https://download.geofabrik.de/), as they have region and subregion extracts readily available for download.
+You can download OSM data in [a variety of ways](https://wiki.openstreetmap.org/wiki/Downloading_data){:target="_blank"}, but I have found it easiest to download from [Geofabrik's free download server](https://download.geofabrik.de/){:target="_blank"}, as they have region and subregion extracts readily available for download.
 
-For this walkthrough, let's download the latest extract of [Belgium](https://download.geofabrik.de/europe/belgium.html).
+For this walkthrough, let's download the latest extract of [Belgium](https://download.geofabrik.de/europe/belgium.html){:target="_blank"}. Run the following command in your terminal.
 
 ~~~ sh
 curl -O https://download.geofabrik.de/europe/belgium-latest.osm.pbf
@@ -63,9 +63,9 @@ With the latest extract of Belgium in our new project directory, we can get star
 
 ### Filtering by bounding box
 
-When working on a laptop or other local machine, it is likely we run into some limit on processing power. While the Belgium data set is small, this is a great opportunity to get started with one of the tools we installed earlier, `osmium-tool`. We're going to extract a small portion of the larger dataset using a [bounding box](https://wiki.openstreetmap.org/wiki/Bounding_Box).
+When working on a laptop or other local machine, it is likely we run into some limit on processing power. While the Belgium dataset is relatively small, this is a great opportunity to get started with one of the tools we installed earlier, `osmium-tool`. Let's extract a small portion of the larger dataset using a [bounding box](https://wiki.openstreetmap.org/wiki/Bounding_Box){:target="_blank"}.
 
-I used [a website](https://boundingbox.klokantech.com/) recommended [in the OSM wiki](https://wiki.openstreetmap.org/wiki/Bounding_Box#Visually_defining_a_bbox) to create a rough bounding box around Brussels, the capital of Belgium. You'll want to drag the bounding box's corners to envelop Brussels, then switch `Copy & Paste` to `CSV` to get coordinates in the correct format (minimum latitude, minimum longitude, maximum latitude, maximum longitude). I ended up with `4.134979,50.671224,4.658203,50.972265`, but your mileage may vary.
+I used [a website](https://boundingbox.klokantech.com/){:target="_blank"} recommended [in the OSM wiki](https://wiki.openstreetmap.org/wiki/Bounding_Box#Visually_defining_a_bbox){:target="_blank"} to create a rough bounding box around Brussels, the capital of Belgium. You'll want to click each of the corners to drag them until the bounding box envelops Brussels, then switch `Copy & Paste` to `CSV` to get coordinates in the correct format (minimum latitude, minimum longitude, maximum latitude, maximum longitude). I ended up with `4.134979,50.671224,4.658203,50.972265`, but your mileage may vary.
 
 ![bbox](/assets/images/osm-at-the-command-line/bbox.jpg)
 
@@ -79,7 +79,7 @@ osmium extract --bbox 4.134979,50.671224,4.658203,50.972265 belgium-latest.osm.p
 
 ### Filtering by tags
 
-Every element in OSM can be labelled with tags to describe features such as class, use case, or even attributes like a roadway's speed limit. For this walkthrough, we can use a tag called [`highway`](https://wiki.openstreetmap.org/wiki/Key:highway) to extract the most important roadways in Brussels. Three of the most important roadways in OSM are tagged as `motorway`, `trunk`, and `primary`.
+Every element in OSM can be labelled with tags to describe features such as class, use case, or even attributes like a roadway's speed limit. For this walkthrough, we can use a tag called [`highway`](https://wiki.openstreetmap.org/wiki/Key:highway){:target="_blank"} to extract the most important roadways in Brussels. Three of the most important roadways in OSM are tagged as `motorway`, `trunk`, and `primary`.
 
 ![tags](/assets/images/osm-at-the-command-line/tags.jpg)
 
@@ -93,7 +93,7 @@ After running the above command, the `ways.osm.pbf` file now contains only ways 
 
 ## Visualizing with the data
 
-Now that we have the major roadways in Brussels, it's time to visualize the data. I've found one of the quickest ways to visualize geospatial data without any initial set up is [kepler.gl](https://kepler.gl/demo). The one catch is Kepler requires the data to be formatted as CSV, JSON, GeoJSON or a saved map JSON.
+Now that we have the major roadways in Brussels, it's time to visualize the data. I've found one of the quickest ways to visualize geospatial data without any initial set up is [kepler.gl](https://kepler.gl/demo){:target="_blank"}. The one catch is Kepler requires the data to be formatted as CSV, JSON, GeoJSON or a saved map JSON.
 
 A quick way to transform your PBF data is to GeoJSON is using GDAL's ogr2ogr, which we installed earlier in the walkthrough.
 
@@ -101,7 +101,7 @@ A quick way to transform your PBF data is to GeoJSON is using GDAL's ogr2ogr, wh
   ogr2ogr -f GeoJSON output_lines.geojson ways.osm.pbf lines
 ~~~
 
-Open [kepler.gl](https://kepler.gl/demo) and upload your `output_lines.geojson` file.
+Open [kepler.gl](https://kepler.gl/demo){:target="_blank"} and upload your `output_lines.geojson` file.
 
 ![upload](/assets/images/osm-at-the-command-line/kepler-upload.jpg)
 
