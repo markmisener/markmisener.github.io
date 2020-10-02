@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Working with OSM data at the command line"
-date: 2020-10-01 19:30:00
+date: 2020/10/01
 update_date:
-tags: osm openstreetmap osmconvert osmfilter kepler
+tags: blog geospatial algorithms OSM openstreetmap mark misener markmisener osm openstreetmap osmconvert osmfilter kepler keplergl
 summary: "With nearly 6.9 million registered users contributing 7B+ data points, OpenStreetMap provides a wealth of free global geospatial data, if you know how to use it."
 ---
 
@@ -31,7 +31,7 @@ brew install osmium-tool
 
 [GDAL](https://gdal.org/){:target="_blank"}
 
-This command takes a little while to complete, so you might want to run the command then take a walk or grab something to eat or drink while you wait for it to run.
+This command takes a little while to complete, so now is a great time to grab a beer.
 ~~~ sh
 brew install gdal
 ~~~
