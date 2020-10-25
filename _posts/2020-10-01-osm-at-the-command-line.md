@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Working with OSM data at the command line"
+summary: "With nearly 6.9 million registered users contributing 7B+ data points, OpenStreetMap provides a wealth of free global geospatial data, if you know how to use it."
 date: 2020/10/01
 update_date:
-tags: blog geospatial algorithms OSM openstreetmap mark misener markmisener osm openstreetmap osmconvert osmfilter kepler keplergl
-summary: "With nearly 6.9 million registered users contributing 7B+ data points, OpenStreetMap provides a wealth of free global geospatial data, if you know how to use it."
+tags: featured blog geospatial algorithms OSM openstreetmap mark misener markmisener osm openstreetmap osmconvert osmfilter kepler keplergl
 ---
 
 OpenStreetMap is a community-driven initiative to create and provide free geographic data, such as street maps, to anyone. At the time of this post, 6.9 million registered users have [contributed](https://www.openstreetmap.org/stats/data_stats.html){:target="_blank"} 6.4B [nodes](https://wiki.openstreetmap.org/wiki/Node){:target="_blank"}, 700M [ways](https://wiki.openstreetmap.org/wiki/Way){:target="_blank"}, and 8.2M [relations](https://wiki.openstreetmap.org/wiki/Relation){:target="_blank"}. The project provides a wealth of free global geospatial data, if you know how to use it.

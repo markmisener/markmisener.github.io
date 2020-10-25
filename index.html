@@ -1,0 +1,38 @@
+---
+layout: default
+title: about
+---
+
+<div class="about clearfix">
+    <div class="left">
+        <img src="/assets/images/me.jpg" alt="Mark Misener" class="avatar"/>
+    </div>
+    <div class="right-container">
+      <div class="right-content">
+        I am a software engineer interested in traffic, ETAs, and how we move. Currently working as a data scientist on the traffic team at <a href="https://www.mapbox.com/" target="_blank">Mapbox</a>, focused on modeling traffic speeds from anonymous sensor data.
+      </div>
+    </div>
+</div>
+
+<div class="recent-posts">
+  <h4>Recent <a href="{{ site.baseurl }}/blog">blog</a> posts:</h4>
+  <div class="home">
+    <div class="posts">
+      {% for post in site.posts limit: 2 %}
+        <div class="post">
+          <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+            <h3 class="h3 post-title">{{ post.title }}</h3>
+          </a>
+          <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+          <p class="post-summary">
+            {% if post.summary %}
+              {{ post.summary }}
+            {% else %}
+              {{ post.excerpt }}
+            {% endif %}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
