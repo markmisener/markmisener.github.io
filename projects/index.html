@@ -1,16 +1,23 @@
 ---
 layout: default
 title: Projects
-projects:
-  - map
 ---
 
 <div class="home">
-  <div class="projects">
-      {% for project in page.projects %}
-        <div class="post">
-          <a href="https://www.markmisener.info/{{ project }}">{{ project }}</a>
-        </div>
-      {% endfor %}
+  <div class="posts">
+    {% for project in site.projects %}
+      <div class="post">
+        <a href="{{ site.url | append: '/' | append: project.name }}" class="post-link">
+          <h3 class="h3 post-title">{{ project.title }}</h3>
+        </a>
+        <p class="post-summary">
+          {% if project.summary %}
+            {{ project.summary }}
+          {% else %}
+            {{ project.excerpt }}
+          {% endif %}
+        </p>
+      </div>
+    {% endfor %}
   </div>
 </div>
