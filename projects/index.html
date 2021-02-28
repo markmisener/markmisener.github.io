@@ -1,0 +1,16 @@
+---
+layout: default
+title: Projects
+projects:
+  - map
+---
+
+<div class="home">
+  <div class="projects">
+      {% for project in page.projects %}
+        <div class="post">
+          <a href="https://www.markmisener.info/{{ project }}">{{ project }}</a>
+        </div>
+      {% endfor %}
+  </div>
+</div>

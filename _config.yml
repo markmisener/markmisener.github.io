@@ -79,6 +79,7 @@ text:
     coming_soon: 'Coming soon'
   navigation:
     blog: 'Blog'
+    projects: 'Projects'
   footer:
     available_on: 'Available on'
     theme: 'Theme'
