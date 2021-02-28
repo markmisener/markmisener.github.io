@@ -1,0 +1,16 @@
+---
+layout: default
+title: Projects
+projects:
+  - map
+---
+
+<div class="home">
+  <div class="projects">
+      {% for project in page.projects %}
+        <div class="post">
+          <a href="{{ site.baseurl }}/{{ project }}">{{ project }}</a>
+        </div>
+      {% endfor %}
+  </div>
+</div>
