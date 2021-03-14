@@ -91,7 +91,7 @@ osmium tags-filter -o ways.osm.pbf brussels.osm.pbf w/highway=motorway,trunk,pri
 
 After running the above command, the `ways.osm.pbf` file now contains only ways within the Brussels bbox with the highway tags of `motorway`, `trunk`, `primary`.
 
-## Visualizing with the data
+## Visualizing the data
 
 Now that we have the major roadways in Brussels, it's time to visualize the data. I've found one of the quickest ways to visualize geospatial data without any initial set up is [kepler.gl](https://kepler.gl/demo){:target="_blank"}. The one catch is Kepler requires the data to be formatted as CSV, JSON, GeoJSON or a saved map JSON.
 
