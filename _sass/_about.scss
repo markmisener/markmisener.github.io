@@ -1,33 +1,13 @@
-.about {
-  .left {
-    margin-right: 25px;
-  }
-  .avatar {
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    width: 250px;
-    height: 250px;
-    overflow: hidden;
-  }
-  .right-container {
-    height: 200px;
-    position: relative;
-  }
-  .right-content {
-    margin: 0;
-    position: relative;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
+.avatar {
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin-right: 5%;
 }
 
-.center-image {
-  margin: 0 auto;
-  display: block;
-}
-
-.recent-posts h4 {
-  border-bottom: thin solid #f3f3f3;
+.image-txt-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }

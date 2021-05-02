@@ -3,16 +3,12 @@ layout: default
 title: about
 ---
 
-<div id="about-container">
-  <div class="about clearfix">
-      <div class="left">
-          <img src="/assets/images/me.jpg" alt="Mark Misener" class="avatar"/>
-      </div>
-      <div class="right-container">
-        <div class="right-content">
-          <h2>Mark Misener</h2>
-          I am a software engineer interested in traffic, ETAs, and how we move. I am currently working as a data scientist on the navigation team at <a href="https://www.mapbox.com/" target="_blank">Mapbox</a>, focused on modeling traffic speeds from anonymous sensor data.
-        </div>
-      </div>
-  </div>
+<div class="image-txt-container">
+   <img src="/assets/images/me.jpg" alt="Mark Misener" class="avatar"/>
+   <div>
+     Mark is a software engineer interested in understanding patterns in how we move. He is currently working on the navigation team at <a href="https://www.mapbox.com/" target="_blank">Mapbox</a>, focused on modeling traffic speeds from anonymous sensor data.
+     {% if site.linkedin_username %}
+      For more information about Mark's background, visit his <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank">LinkedIn profile.</a>
+      {% endif %}
+   </div>
 </div>
