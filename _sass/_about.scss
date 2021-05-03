@@ -1,11 +1,17 @@
 .avatar {
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  margin-right: 5%;
-  width: auto;
-  max-width: 100%;
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .avatar {
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    margin-right: 5%;
+    width: auto;
+    max-width: 100%;
+  }
 }
 
 .image-txt-container {
